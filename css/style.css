@@ -1,0 +1,34 @@
+footer {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.article {
+  margin: 2em 0;
+}
+
+.articles_admin {
+  width: 100%;
+}
+
+.form-admin {
+  width: 50%;
+  margin: auto;
+}
+
+.form-admin label {
+  display: block;
+  margin: 1em 0;
+}
+
+.form-admin input,
+.form-admin textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-admin textarea {
+  height: 400px;
+  resize: vertical;
+}

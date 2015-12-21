@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Login"
+AuthUserFile C:/xampp/htdocs/blog/admin/.htpasswd
+Require valid-user
