@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'database.php';
-  require_once 'models/articles.php';
+  require_once __DIR__ . '/database.php';
+  require_once __DIR__ . '/models/articles.php';
 
   if (!isset($_GET['id'])) {
     echo 'Не удалось получить идентификатор';
@@ -13,6 +13,6 @@
   $mysqli = db_connect();
   $article = articles_get($mysqli, $id);
 
-  include 'views/article.php';
+  include __DIR__ . '/views/article.php';
 
 ?>

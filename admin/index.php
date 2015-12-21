@@ -1,7 +1,7 @@
 <?php
 
-  require_once '../database.php';
-  require_once '../models/articles.php';
+  require_once __DIR__ . '/../database.php';
+  require_once __DIR__ . '/../models/articles.php';
 
   $mysqli = db_connect();
 
@@ -19,7 +19,7 @@
     $article['title'] = null;
     $article['date'] = null;
     $article['content'] = null;
-    include '../views/article_admin.php';
+    include __DIR__ . '/../views/article_admin.php';
   } else if ($action == 'edit') {
     if (!isset($_GET['id'])) {
       header('Location: index.php');
@@ -31,7 +31,7 @@
       header('location: index.php');
     }
     $article = articles_get($mysqli, $id);
-    include '../views/article_admin.php';
+    include __DIR__ . '/../views/article_admin.php';
   } else if ($action == 'delete') {
     if (isset($_GET['id'])) {
       if ((int)$_GET['id'] > 0) {
@@ -42,7 +42,7 @@
     header('location: index.php');
   } else {
     $articles = articles_all($mysqli);
-    include '../views/articles_admin.php';
+    include __DIR__ . '/../views/articles_admin.php';
   }
   
 ?>

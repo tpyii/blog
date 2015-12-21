@@ -1,11 +1,11 @@
 <?php
 
-  require_once 'database.php';
-  require_once 'models/articles.php';
+  require_once __DIR__ . '/database.php';
+  require_once __DIR__ . '/models/articles.php';
 
   $mysqli = db_connect();
   $articles = articles_all($mysqli);
 
-  include 'views/articles.php';
+  include __DIR__ . '/views/articles.php';
 
 ?>
