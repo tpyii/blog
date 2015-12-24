@@ -14,9 +14,9 @@
 
         <?php foreach($data as $article): ?>
         <div class="article">
-          <h3><a href="article.php?id=<?=$article->id?>"><?=$article->title?></a></h3>
+          <h3><a href="?action=one&id=<?=$article->id?>"><?=$article->title?></a></h3>
           <em>Опубликовано: <?=$article->date?></em>
-          <p><?=$articles->intro($article->content)?></p>
+          <p><?=mb_substr($article->content, 0, 500)?></p>
         </div>
         <?php endforeach; ?>
         

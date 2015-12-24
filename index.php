@@ -1,10 +1,11 @@
 <?php
 
-  require_once __DIR__ . '/models/Articles.php';
+  require_once __DIR__ . '/autoload.php';
 
-  $articles = new Articles();
-  $data = $articles->all();
+  $controller = $_GET['controller'] ? $_GET['controller'] : 'Articles';
+  $action = $_GET['action'] ? $_GET['action'] : 'all';
 
-  include __DIR__ . '/views/articles.php';
+  $controller = new $controller;
+  $controller->$action();
 
 ?>
