@@ -12,11 +12,11 @@
       <h1>Мой первый блог</h1>
       <div>
 
-        <?php foreach($articles as $article): ?>
+        <?php foreach($data as $article): ?>
         <div class="article">
-          <h3><a href="article.php?id=<?=$article['id']?>"><?=$article['title']?></a></h3>
-          <em>Опубликовано: <?=$article['date']?></em>
-          <p><?=articles_intro($article['content'])?></p>
+          <h3><a href="article.php?id=<?=$article->id?>"><?=$article->title?></a></h3>
+          <em>Опубликовано: <?=$article->date?></em>
+          <p><?=$articles->intro($article->content)?></p>
         </div>
         <?php endforeach; ?>
         

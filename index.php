@@ -1,10 +1,9 @@
 <?php
 
-  require_once __DIR__ . '/database.php';
-  require_once __DIR__ . '/models/articles.php';
+  require_once __DIR__ . '/models/Articles.php';
 
-  $mysqli = db_connect();
-  $articles = articles_all($mysqli);
+  $articles = new Articles();
+  $data = $articles->all();
 
   include __DIR__ . '/views/articles.php';
 

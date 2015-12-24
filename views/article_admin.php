@@ -12,21 +12,21 @@
       <h1>Мой первый блог</h1>
       <div>
         
-        <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>" class="form-admin">
+        <form method="post" action="index.php?action=<?=$_GET['action']?><?=$_GET['action'] != 'add' ? '&id='.$_GET['id'] : '' ?>" class="form-admin">
 
           <label>
             Заголовок
-            <input type="text" name="title" value="<?=$article['title']?>" class="form-item" autofocus required>
+            <input type="text" name="title" value="<?=$article->title?>" class="form-item" autofocus required>
           </label>
           
           <label>
             Дата
-            <input type="date" name="date" value="<?=$article['date']?>" class="form-item" required>
+            <input type="date" name="date" value="<?=$article->date?>" class="form-item" required>
           </label>
           
           <label>
             Содержимое
-            <textarea name="content" class="form-item" required><?=$article['content']?></textarea>
+            <textarea name="content" class="form-item" required><?=$article->content?></textarea>
           </label>
           
           <input type="submit" value="Добавить" class="btn">

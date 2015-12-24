@@ -13,9 +13,9 @@
       <div>
         
         <div class="article">
-          <h3><?=$article['title']?></a></h3>
-          <em>Опубликовано: <?=$article['date']?></em>
-          <p><?=$article['content']?></p>
+          <h3><?=$article->title?></a></h3>
+          <em>Опубликовано: <?=$article->date?></em>
+          <p><?=$article->content?></p>
         </div>
         
       </div>

@@ -1,9 +1,8 @@
 <?php
 
-  require_once __DIR__ . '/../database.php';
-  require_once __DIR__ . '/../models/articles.php';
+  require_once __DIR__ . '/../models/Articles.php';
 
-  $mysqli = db_connect();
+  $articles = new Articles();
 
   if (isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -12,37 +11,52 @@
   }
 
   if ($action == 'add') {
+
     if (!empty($_POST)) {
-      articles_new($mysqli, $_POST);
+      $articles->add($_POST);
       header('location: index.php');
     }
-    $article['title'] = null;
-    $article['date'] = null;
-    $article['content'] = null;
+
+    $article = new stdClass();
+    $article->title = null;
+    $article->date = null;
+    $article->content = null;
+
     include __DIR__ . '/../views/article_admin.php';
+
   } else if ($action == 'edit') {
+
     if (!isset($_GET['id'])) {
       header('Location: index.php');
     }
+
     $id = (int)$_GET['id'];
+
     if (!empty($_POST) && $id > 0) {
       $_POST['id'] = $id;
-      articles_edit($mysqli, $_POST);
+      $articles->edit($_POST);
       header('location: index.php');
     }
-    $article = articles_get($mysqli, $id);
+
+    $article = $articles->get($id);
+
     include __DIR__ . '/../views/article_admin.php';
+
   } else if ($action == 'delete') {
+
     if (isset($_GET['id'])) {
       if ((int)$_GET['id'] > 0) {
-        articles_delete($mysqli, $_GET['id']);
-        header('location: index.php');
+        $articles->delete($_GET['id']);
       }
     }
+
     header('location: index.php');
+
   } else {
-    $articles = articles_all($mysqli);
+
+    $data = $articles->all();
     include __DIR__ . '/../views/articles_admin.php';
+
   }
   
 ?>

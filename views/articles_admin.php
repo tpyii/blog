@@ -23,12 +23,12 @@
           </thead>
           <tbody>
             
-            <?php foreach($articles as $article): ?>
+            <?php foreach($data as $article): ?>
             <tr>
-              <td><?=$article['date']?></td>
-              <td><?=$article['title']?></td>
-              <td><a href="index.php?action=edit&id=<?=$article['id']?>">Редактировать</a></td>
-              <td><a href="index.php?action=delete&id=<?=$article['id']?>">Удалить</a></td>
+              <td><?=$article->date?></td>
+              <td><?=$article->title?></td>
+              <td><a href="index.php?action=edit&id=<?=$article->id?>">Редактировать</a></td>
+              <td><a href="index.php?action=delete&id=<?=$article->id?>">Удалить</a></td>
             </tr>
             <?php endforeach ?>
             
