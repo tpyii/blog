@@ -12,11 +12,11 @@
       <h1>Мой первый блог</h1>
       <div>
 
-        <?php foreach($data as $article): ?>
+        <?php foreach($this->data as $article): ?>
         <div class="article">
           <h3><a href="?action=one&id=<?=$article->id?>"><?=$article->title?></a></h3>
           <em>Опубликовано: <?=$article->date?></em>
-          <p><?=mb_substr($article->content, 0, 500)?></p>
+          <p><?=Text::substr($article->content)?></p>
         </div>
         <?php endforeach; ?>
         

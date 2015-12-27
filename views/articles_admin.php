@@ -23,7 +23,7 @@
           </thead>
           <tbody>
             
-            <?php foreach($data as $article): ?>
+            <?php foreach($this->data as $article): ?>
             <tr>
               <td><?=$article->date?></td>
               <td><?=$article->title?></td>

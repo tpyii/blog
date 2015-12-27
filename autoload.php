@@ -7,6 +7,8 @@
 			require __DIR__ . '/library/' . $class . '.php';
 		} else if (file_exists(__DIR__ . '/models/' . $class . '.php')) {
 			require __DIR__ . '/models/' . $class . '.php';
+		} else if (file_exists(__DIR__ . '/helpers/' . $class . '.php')) {
+			require __DIR__ . '/helpers/' . $class . '.php';
 		}
 	}
 
